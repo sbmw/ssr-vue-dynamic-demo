@@ -1,0 +1,17 @@
+{
+    "name": "vue-ssr-dynamic-demo",
+    "version": "1.0.0",
+    "scripts": {
+        "nossr": "vite dev",
+        "ssr": "NODE_ENV=production npm run build:client && npm run build:server && node server",
+        "build:client": "vite build --ssrManifest --outDir dist/client",
+        "build:server": "vite build --ssr src/entry-server.js --outDir dist/server"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^2.3.2",
+        "express": "^4.18.1",
+        "serve-static": "^1.15.0",
+        "vite": "^2.9.8",
+        "vue": "^3.2.33"
+    }
+}
